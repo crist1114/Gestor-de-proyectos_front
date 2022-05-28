@@ -1,0 +1,10 @@
+.nav-link:hover{
+    color: red;
+    background-color: white;
+    border-color: red; /*set the color you want here*/
+    text-emphasis-color: red;
+}
+
+.nav-link{
+    color: white;
+}

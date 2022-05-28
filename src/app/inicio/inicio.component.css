@@ -1,0 +1,16 @@
+#imgIni{
+    width: 100%;
+    height: 80%;
+    margin-top: 15%;
+    margin-right: 10%;
+    padding-top: 0;
+}
+.descripcion{
+    height: 500px;
+}
+.btn{
+    width: 80%;
+}
+/* #foot{
+    position: relative;
+} */

@@ -1,0 +1,54 @@
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<!-- <pre>
+  {{ proyectos | json }}
+</pre> -->
+<div class="row cont">
+<div class="col-2">
+<app-sidebar></app-sidebar>
+</div>
+<div class="col-9 panel-proyecto" style="margin-left: 35px;">
+    <div class="row mt-4 " style="width: 100%;">
+        <div class="col-12 text-danger m-4">
+            <h1>Proyectos</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="row m-5"> 
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Asignatura</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+             
+              <tr *ngFor="let proyecto of proyectos">
+                <th scope="row">{{proyecto._id}}</th>
+                <td>{{proyecto.nombre}}</td>
+                <td>{{proyecto.descripcion}}</td>
+                <td>
+                    <button type="button" class="btn border " (click)="eliminarProyecto(proyecto._id)"><span class="material-symbols-outlined">
+                        delete
+                        </span>
+                    </button>
+                    <button type="button" class="btn border" (click)="getTareas(proyecto._id)" style="margin-left: 5px; "><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+</div>
+</div>
+<!-- <div class="col-9 border">
+
+</div> -->

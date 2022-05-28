@@ -1,0 +1,45 @@
+<body>
+  <!-- header -->
+  <app-header></app-header>
+  <div class="cont">
+  <div class="text-center">
+    <h1>Iniciar sesion</h1>
+    <h5 class="text-danger">Gestor de proyectos de aula</h5>
+  </div>
+  <form method="post">
+    <div class="group">
+      <input
+        type="email"
+        [(ngModel)]="username"
+        name="email"
+        required="required"
+      />
+      <span class="highlight"></span><span class="bar"></span>
+      <label>Username</label>
+    </div>
+    <div class="group">
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required="required"
+      />
+      <span class="highlight"></span><span class="bar"></span>
+      <label>Password</label>
+    </div>
+    <button type="submit" (click)="login()" class="button buttonBlue bg-danger">
+      Iniciar sesion
+      <div class="ripples buttonRipples">
+        <span class="ripplesCircle"></span>
+      </div>
+    </button>
+  </form>
+</div>
+  <!-- footer -->
+  <app-footer></app-footer>
+</body>
+<script
+  src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"
+></script>
