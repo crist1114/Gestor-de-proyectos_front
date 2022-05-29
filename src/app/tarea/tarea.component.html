@@ -7,10 +7,10 @@
 </pre> -->
 
 <div class="row cont">
-<div class="col-2">
+<div class="col-3">
 <app-sidebar></app-sidebar>
 </div>
-<div class="col-9 panel-proyecto" style="margin-left: 35px;">
+<div class="col-8 panel-proyecto" style="margin-left: 35px;">
     <div class="row mt-4 " style="width: 100%;">
         <div class="col-12 text-danger m-4">
             <h1>Tareas del Proyecto</h1>
@@ -41,7 +41,7 @@
                 <td>
                   <div class="container">
                     <div class="row">
-                      <div class="col-sm-2">
+                      <div class="col-sm-2" *ngIf="tarea.estado!==2">
                         <a class="btn btn-success" (click)="modalTerminada(tarea.id)">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
                             <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>

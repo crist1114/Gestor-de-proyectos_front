@@ -6,10 +6,10 @@
   {{ proyectos | json }}
 </pre> -->
 <div class="row cont">
-<div class="col-2">
+<div class="col-3">
 <app-sidebar></app-sidebar>
 </div>
-<div class="col-9 panel-proyecto" style="margin-left: 35px;">
+<div class="col-9 panel-proyecto">
     <div class="row mt-4 " style="width: 100%;">
         <div class="col-12 text-danger m-4">
             <h1>Proyectos</h1>
@@ -28,7 +28,6 @@
             </thead>
           
             <tbody>
-             
               <tr *ngFor="let proyecto of proyectos">
                 <th scope="row">{{proyecto._id}}</th>
                 <td>{{proyecto.nombre}}</td>
@@ -45,6 +44,8 @@
               </tr>
             </tbody>
           </table>
+          <h2 *ngIf="proyectos.length===0" style="text-align: center;">Sin proyectos!</h2>
+    <div class="row align-items-center" *ngIf="proyectos.length===0"><img style="width: 400px; height: 400px; margin: auto;" src="https://ouch-cdn2.icons8.com/e7jVgiFyJNrYD3-FUIV44X5AXO90vl1qqK9t0L0t7OE/rs:fit:784:784/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzI0/L2JmZWI0NTVmLTI5/ZDQtNGIxZi1hNmI1/LTc0ZDRkOTJlNGNm/ZS5zdmc.png" alt="" srcset=""></div>
     </div>
     
 </div>
