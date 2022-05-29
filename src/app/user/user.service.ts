@@ -8,7 +8,7 @@ import { usuario } from "./usuario.interface";
 })
 export class UserService {
   //produccion https://micro-users-bclbwzlakq-uc.a.run.app/api
-  private apiUrl = 'http://localhost:3000/api'
+  private apiUrl = 'https://micro-user-bclbwzlakq-uc.a.run.app/api'
   constructor(private http: HttpClient, private cookies: CookieService) { 
 
   }

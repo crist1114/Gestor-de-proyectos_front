@@ -19,7 +19,7 @@ export class RegistroComponent{//} implements OnInit {
     const user = { name: this.name, username: this.correo, password: this.password, rol: this.rol};
     console.log('este es el rol ',this.rol)
     this.userService.register(user).subscribe(data => {
-      alert('usuario registrado!');
+      
       
       location.pathname = 'login';
     }, err => {

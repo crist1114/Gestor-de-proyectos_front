@@ -30,6 +30,7 @@ export class TareaService {
       id: id,
       estado: 2,
       observaciones: observacion,
+      fecha_fin: new Date()
     }
     return this.http.post(`${this.apiUrl}/tasks/edit/`, edit);
   }
