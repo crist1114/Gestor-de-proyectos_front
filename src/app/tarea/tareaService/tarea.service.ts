@@ -10,7 +10,7 @@ import { tarea } from '../interface/tarea.interface';
 export class TareaService {
 
   // private apiUrl = 'https://gestion-tareas-bclbwzlakq-uc.a.run.app'
-  private apiUrl = 'https://gestion-tareas2-bclbwzlakq-uc.a.run.app'
+  private apiUrl = 'https://gestion-tareas3-bclbwzlakq-uc.a.run.app'
   constructor(private http: HttpClient) { 
 
   }
