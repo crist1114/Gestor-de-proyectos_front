@@ -39,11 +39,11 @@ export class ProyectoService {
   }
 
   getEstudiantesProyecto(idProyecto:string){
-    return this.http.get<any[]>(this.apiUrl+'estudiantesProyecto/'+idProyecto);
+    return this.http.get<any[]>(this.apiUrl+'/estudiantesProyecto/'+idProyecto);
   }
 
   getLiderProyecto(idProyecto:string){
-    return this.http.get<proyecto_usuario>(this.apiUrl+'liderProyecto/'+idProyecto);
+    return this.http.get<proyecto_usuario>(this.apiUrl+'/liderProyecto/'+idProyecto);
   }
   
 //   setToken(token: any) {
