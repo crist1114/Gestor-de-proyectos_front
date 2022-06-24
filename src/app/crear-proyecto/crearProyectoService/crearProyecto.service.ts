@@ -9,7 +9,9 @@ import { proyecto } from 'src/app/proyecto/interface/proyecto.interface';
 export class crearProyectoService {
 
   // private apiUrl = 'https://micro-proyectos-bclbwzlakq-uc.a.run.app/api'
-  private apiUrl = 'http://localhost:3200/api/';
+  private apiUrl = 'https://gestion-proyectos2-bclbwzlakq-uc.a.run.app/api'
+  
+  // private apiUrl = 'http://localhost:3200/api/';
   constructor(private http: HttpClient, private cookies: CookieService) { 
 
   }
