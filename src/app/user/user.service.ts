@@ -9,8 +9,8 @@ import { usuario } from "./usuario.interface";
 export class UserService {
 
  
-  //produccion https://micro-users-bclbwzlakq-uc.a.run.app/api
-  private apiUrl = 'http://localhost:3000/api'
+  private apiUrl = 'https://gestion-usuarios-bclbwzlakq-uc.a.run.app/api'
+  // private apiUrl = 'http://localhost:3000/api'
   constructor(private http: HttpClient, private cookies: CookieService) { 
 
     

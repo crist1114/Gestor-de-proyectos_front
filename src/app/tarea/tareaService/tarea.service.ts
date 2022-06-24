@@ -9,7 +9,7 @@ import { tarea } from '../interface/tarea.interface';
 })
 export class TareaService {
 
-  private apiUrl = 'http://localhost:3002'
+  private apiUrl = 'https://gestion-tareas-bclbwzlakq-uc.a.run.app'
   constructor(private http: HttpClient) { 
 
   }
