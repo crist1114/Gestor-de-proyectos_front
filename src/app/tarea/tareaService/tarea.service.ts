@@ -11,6 +11,7 @@ export class TareaService {
 
   // private apiUrl = 'https://gestion-tareas-bclbwzlakq-uc.a.run.app'
   private apiUrl = 'https://gestion-tareas3-bclbwzlakq-uc.a.run.app'
+  // private apiUrl = 'http://localhost:8080';
   constructor(private http: HttpClient) { 
 
   }

@@ -30,7 +30,7 @@
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="tareas" >
               
               <tr *ngFor="let tarea of tareas">
                 <td>{{tarea.id}}</td>

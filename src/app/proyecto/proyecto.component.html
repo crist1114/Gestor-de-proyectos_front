@@ -27,7 +27,7 @@
               </tr>
             </thead>
           
-            <tbody>
+            <tbody *ngIf="proyectos">
              <tr *ngFor="let proyecto of proyectos"> 
                <!-- <th scope="row">{{proyecto._id}}</th> -->
                 <td>{{proyecto.nombre}}</td>
