@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing } from './app.routing';
-
+import { DataTablesModule } from "angular-datatables";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -19,6 +19,9 @@ import { CrearTareaComponent } from './crear-tarea/crear-tarea.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MetricasComponent } from './metricas/metricas.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 @NgModule({
@@ -34,6 +37,8 @@ import { MatButtonModule } from '@angular/material/button';
     CrearProyectoComponent,
     TareaComponent,
     CrearTareaComponent,
+    MetricasComponent,
+    PerfilComponent,
     
   ],
   imports: [
@@ -44,6 +49,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatDialogModule, 
     MatButtonModule,
+    DataTablesModule,
+    NgxChartsModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

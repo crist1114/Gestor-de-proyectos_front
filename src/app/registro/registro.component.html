@@ -9,12 +9,12 @@
     <div class="group">
       <input
         type="text"
-        [(ngModel)]="name"
-        name="name"
+        [(ngModel)]="nombre"
+        name="nombre"
         required="required"
       />
       <span class="highlight"></span><span class="bar"></span>
-      <label>Name</label>
+      <label>Nombre</label>
     </div>
     <div class="group">
       <input
@@ -28,7 +28,8 @@
     </div>
     <div class="group">
       <select [(ngModel)]="rol" name="rol" class="form-select">
-        <option  [value]=1 selected="true">Estudiante</option>
+        <option value="">Selecciona una rol</option>
+        <option  [value]=1>Estudiante</option>
         <option  [value]=2>Docente</option>
       </select>
     </div>

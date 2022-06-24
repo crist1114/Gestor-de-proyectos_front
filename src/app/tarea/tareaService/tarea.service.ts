@@ -14,9 +14,23 @@ export class TareaService {
 
   }
 
+  getTareasPorEstado(id:number){
+    return this.http.get<any[]>(`${this.apiUrl}/tasks/tareasestado/${id}`);
+  }
+
   getTareas(id:string): Observable<any[]> {
     
     return this.http.get<any[]>(`${this.apiUrl}/tasks/${id}`);
+  }
+
+  getTarea(id:string): Observable<any[]> {
+    
+    return this.http.get<any[]>(`${this.apiUrl}/task/${id}`);
+  }
+
+  getTareasEstudiante(id:string): Observable<any[]> {
+    
+    return this.http.get<any[]>(`${this.apiUrl}/tasksEst/${id}`);
   }
 
   eliminar(id:string): Observable<any>{
@@ -24,13 +38,20 @@ export class TareaService {
     return this.http.post(`${this.apiUrl}/tasks/delete/${id}`, null);
   }
 
-  editarTarea(id:string, observacion:string): Observable<any>{
+  eliminarPorIdProyecto(id:string): Observable<any>{
 
+    return this.http.post(`${this.apiUrl}/tasks/deletePorProyecto/${id}`, null);
+  }
+
+  editarTarea(id:string, observacion:string): Observable<any>{
+    console.log('la observacion es ',observacion)
+    const date =  new Date();
+    const fe = date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
     const edit = {
       id: id,
       estado: 2,
       observaciones: observacion,
-      fecha_fin: new Date()
+      fecha_fin: fe
     }
     return this.http.post(`${this.apiUrl}/tasks/edit/`, edit);
   }

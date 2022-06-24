@@ -9,18 +9,18 @@
 <div class="col-3">
 <app-sidebar></app-sidebar>
 </div>
-<div class="col-9 panel-proyecto">
-    <div class="row mt-4 " style="width: 100%;">
-        <div class="col-12 text-danger m-4">
+<div class="col-9 panel-proyecto m-3 p-4" style="width: 70%;">
+    <div class="row p-3" >
+        <div class="col-12 text-danger">
             <h1>Proyectos</h1>
         </div>
     </div>
     <hr>
-    <div class="row m-5"> 
-        <table class="table">
+    <div class="row m-5 p-4 card shadow"> 
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
             <thead>
               <tr>
-                <th scope="col">id</th>
+                <!-- <th scope="col">id</th> -->
                 <th scope="col">Nombre</th>
                 <th scope="col">Asignatura</th>
                 <th scope="col">Acciones</th>
@@ -28,18 +28,21 @@
             </thead>
           
             <tbody>
-              <tr *ngFor="let proyecto of proyectos">
-                <th scope="row">{{proyecto._id}}</th>
+             <tr *ngFor="let proyecto of proyectos"> 
+               <!-- <th scope="row">{{proyecto._id}}</th> -->
                 <td>{{proyecto.nombre}}</td>
                 <td>{{proyecto.descripcion}}</td>
                 <td>
-                    <button type="button" class="btn border " (click)="eliminarProyecto(proyecto._id)"><span class="material-symbols-outlined">
-                        delete
+                    <button *ngIf="rol=='2'" type="button" class="btn border " (click)="eliminarProyecto(proyecto._id)"><span class="bi bi-trash3-fill">
+                     
                         </span>
                     </button>
-                    <button type="button" class="btn border" (click)="getTareas(proyecto._id)" style="margin-left: 5px; "><span class="material-symbols-outlined">
-                        visibility
+                    <button *ngIf="rol=='2'" type="button" class="btn border btn-success" (click)="getTareas(proyecto._id)" style="margin-left: 5px; "><span class="bi bi-pencil-square">
+                        Editar
                     </span></button>
+                    <button type="button" class="btn border btn-success" (click)="verDetallesProyecto(proyecto._id, proyecto.nombre, proyecto.descripcion)" style="margin-left: 5px; "><span class="bi bi-eye">
+                      
+                  </span></button>
                 </td>
               </tr>
             </tbody>
@@ -50,6 +53,7 @@
     
 </div>
 </div>
+
 <!-- <div class="col-9 border">
 
 </div> -->

@@ -1,0 +1,49 @@
+
+<div class="row d-flex">
+    <div class="col-3">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-9" style="padding-left: 50px; padding-right: 30px;">
+            <h1 class="text-danger p-4">
+                Metricas
+            </h1>
+            <hr>
+            <div class="row d-flex justify-content-center">
+            <div class="col-6 d-flex justify-content-center m-2 p-3 card shadow">
+                <ngx-charts-bar-vertical-normalized
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="multi"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabel"
+                    [yAxisLabel]="yAxisLabel">
+              </ngx-charts-bar-vertical-normalized>
+            </div>
+            <div class="col-5 d-flex justify-content-center m-2 p-3 card shadow">
+                <ngx-charts-pie-chart
+                [view]="viewP"
+                [scheme]="colorScheme"
+                [results]="single"
+                [gradient]="gradient"
+                [legend]="showLegend"
+                [legendPosition]="legendPosition"
+                [labels]="showLabels"
+                [doughnut]="isDoughnut"
+                (select)="onSelectp($event)"
+                (activate)="onActivate($event)"
+                (deactivate)="onDeactivate($event)"
+                >
+                </ngx-charts-pie-chart>
+                
+            </div>
+            
+            <hr>
+        </div>
+    </div>
+</div>
+

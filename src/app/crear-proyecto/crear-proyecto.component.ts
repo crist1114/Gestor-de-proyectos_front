@@ -3,6 +3,8 @@ import { crearProyectoService } from './crearProyectoService/crearProyecto.servi
 import { UserService } from '../user/user.service';
 import { usuario } from '../user/usuario.interface';
 import { tap } from 'rxjs/operators';
+import { CookieService } from 'ngx-cookie-service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-proyecto',
@@ -15,6 +17,7 @@ export class CrearProyectoComponent implements OnInit{
   // LOS VALORES QUE IRAN EN EL FORM
   nombre!:string;
   descripcion!:string;
+  idProfesor!:string;
   //para los usuarios que se obtienen seleccionados
   usuariosSelected!:string[];
   //para saber quien es lider
@@ -24,19 +27,33 @@ export class CrearProyectoComponent implements OnInit{
   usuarios!:usuario[];
 
   constructor(public crearProyectoService : crearProyectoService,
-    public userService : UserService) { }//
+    public userService : UserService, private cookies: CookieService) { }//
 
   crearProyecto(){
-
+    const user = JSON.parse(this.cookies.get("usuarioSesion"));
+    this.idProfesor = user.id;
         const proyecto = {
             nombre: this.nombre,
-            descripcion: this.descripcion
+            descripcion: this.descripcion,
+            idProfesor: this.idProfesor
         }
         const usuariosSelected = document.querySelectorAll('input[type=checkbox]:checked');
+
         //para saber quien es el lider
         const lider = document.querySelectorAll('input[type=radio]:checked');
         this.Eslider = lider[0].id;
+        if(document.querySelectorAll('input[id='+this.Eslider+']:checked').length<2){
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Hey! el lider debe ser parte del proyecto!',
+              footer: ''
+            })
+        }
+
+        else{
         let seleccionados = new Array();
+
         for(let i=0; i<usuariosSelected.length; i++){
           seleccionados.push(usuariosSelected[i].id);
         }
@@ -51,13 +68,14 @@ export class CrearProyectoComponent implements OnInit{
         
               this.crearProyectoService.asociarProyecto(id_proyecto_creado, seleccionados[i], this.Eslider).subscribe(data => {
                   
-                alert('proyecto creado!');
+                
                 
               });
             }
         
                  location.pathname = 'proyecto';
             });
+          }
     
     
   }
@@ -67,7 +85,7 @@ export class CrearProyectoComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.userService.getUsuarios()
+    this.userService.getEstudiantes()
     .pipe(
         tap((usuarios: usuario[]) =>{
           this.usuarios = usuarios;

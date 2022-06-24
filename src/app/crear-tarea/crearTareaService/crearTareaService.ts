@@ -14,7 +14,7 @@ export class crearTareaService {
   }
   crearTarea(tarea: any):Observable<any>{
     
-    return this.http.post(this.apiUrl+'/create', tarea);
+    return this.http.post(this.apiUrl+'/create/', tarea);
   }
 
 

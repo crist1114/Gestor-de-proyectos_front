@@ -6,18 +6,25 @@ import { UserService } from '../user/user.service';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent{//} implements OnInit {
+export class RegistroComponent implements OnInit {
+  
+  selectedInfo!:string;
 
   correo!: string;
-  name!: string;
+  nombre!: string;
   password!: string;
-  rol!:number;
+  rol!:string;
 
   constructor(public userService: UserService) {}
 
   register() {
-    const user = { name: this.name, username: this.correo, password: this.password, rol: this.rol};
-    console.log('este es el rol ',this.rol)
+    const user = { 
+      name: this.nombre, 
+      username: this.correo, 
+      password: this.password, 
+      rol: this.rol
+    };
+    console.log('este es el usuario ',user)
     this.userService.register(user).subscribe(data => {
       
       
@@ -28,7 +35,8 @@ export class RegistroComponent{//} implements OnInit {
       console.log(err)
      });
   }
-  // ngOnInit(): void {
-  // }
+  ngOnInit(): void {
+    this.rol='';
+  }
 
 }
