@@ -11,7 +11,7 @@ import { proyecto_usuario } from '../proyecto/interface/proyecto_usuario.interfa
 })
 export class ProyectoService {
   
-  private apiUrl = 'https://gestion-proyectos-bclbwzlakq-uc.a.run.app/api'
+  private apiUrl = 'https://gestion-proyectos-bclbwzlakq-uc.a.run.app/api/'
   // private apiUrl = 'http://localhost:3200/api/'
   constructor(private http: HttpClient) {      
 
